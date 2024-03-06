@@ -23,6 +23,6 @@ typedef struct
 
 extern void TouchMenu_Init(void);
 
-extern void TouchMenu_Run200ms(void);
+extern void TouchMenu_Run200ms(void); /**/
 
 #endif /* SRC_ASW_INFODISPLAY_TOUCHMENU_H_ */
