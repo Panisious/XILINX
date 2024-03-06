@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="ti_spi_if" xd:componentRef="ti_spi_if" xd:initiationInterval="1" xd:clockPeriod="10.000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+  <xd:controlReg xd:name="control" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:type="generic_axi_lite" xd:offset="0x0"/>
+  <xd:arg xd:name="Ctrl_PS" xd:originalName="Ctrl_PS" xd:direction="in" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x10" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
+  <xd:arg xd:name="FifoByteNum_PS" xd:originalName="FifoByteNum_PS" xd:direction="in" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x18" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
+  <xd:arg xd:name="*(StringUpdate)" xd:originalName="StringUpdate" xd:direction="out" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x20" xd:handshakeRef="ap_vld" xd:statusOffset="0x24" xd:dataWidth="32"/>
+  <xd:arg xd:name="*(StringLen)" xd:originalName="StringLen" xd:direction="out" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x28" xd:handshakeRef="ap_vld" xd:statusOffset="0x2C" xd:dataWidth="32"/>
+  <xd:arg xd:name="*(MISO_Sel)" xd:originalName="MISO_Sel" xd:direction="in" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x30" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
+  <xd:arg xd:name="*(MISO_Sel)" xd:originalName="MISO_Sel" xd:direction="out" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x38" xd:handshakeRef="ap_vld" xd:statusOffset="0x3C" xd:dataWidth="32"/>
+  <xd:arg xd:name="MOSI_data[]" xd:originalName="MOSI_data" xd:direction="out" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x1000" xd:arraySize="4096" xd:dataWidth="8"/>
+  <xd:arg xd:name="MISO_data[]" xd:originalName="MISO_data" xd:direction="in" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x2000" xd:arraySize="128" xd:dataWidth="8"/>
+  <xd:arg xd:name="MOSI_in" xd:originalName="MOSI_in" xd:direction="in" xd:interfaceRef="MOSI_in" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="8" xd:firstOut="2"/>
+  <xd:arg xd:name="*(MISO_out)" xd:originalName="MISO_out" xd:direction="out" xd:interfaceRef="MISO_out" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="8" xd:firstOut="2"/>
+  <xd:arg xd:name="Update_Byte_In" xd:originalName="Update_Byte_In" xd:direction="in" xd:interfaceRef="Update_Byte_In" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="1" xd:firstOut="2"/>
+  <xd:arg xd:name="Update_String_In" xd:originalName="Update_String_In" xd:direction="in" xd:interfaceRef="Update_String_In" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="1" xd:firstOut="2"/>
+  <xd:arg xd:name="*(Update_Byte_Out)" xd:originalName="Update_Byte_Out" xd:direction="out" xd:interfaceRef="Update_Byte_Out" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="1" xd:firstOut="2"/>
+  <xd:arg xd:name="*(Update_String_Out)" xd:originalName="Update_String_Out" xd:direction="out" xd:interfaceRef="Update_String_Out" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="1" xd:firstOut="2"/>
+  <xd:arg xd:name="*(RDY_SET)" xd:originalName="RDY_SET" xd:direction="out" xd:interfaceRef="RDY_SET" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="1" xd:firstOut="2"/>
+  <xd:arg xd:name="*(RDY_RESET)" xd:originalName="RDY_RESET" xd:direction="out" xd:interfaceRef="RDY_RESET" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="1" xd:firstOut="2"/>
+  <xd:arg xd:name="*(INH_SET)" xd:originalName="INH_SET" xd:direction="out" xd:interfaceRef="INH_SET" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="1" xd:firstOut="2"/>
+  <xd:arg xd:name="*(INH_RESET)" xd:originalName="INH_RESET" xd:direction="out" xd:interfaceRef="INH_RESET" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="1" xd:firstOut="2"/>
+  <xd:latencyEstimates xd:best-case="2" xd:worst-case="2" xd:average-case="2"/>
+  <xd:resourceEstimates xd:LUT="618" xd:FF="638" xd:BRAM="4" xd:DSP="0"/>
+</xd:acceleratorMap>

@@ -1,0 +1,190 @@
+
+
+================================================================
+== Vivado HLS Report for 'ti_spi_if'
+================================================================
+* Date:           Fri Feb 23 00:36:57 2024
+
+* Version:        2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)
+* Project:        TI_AfeSim_Spi_Interface
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg400-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     3.414|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |    2|    2|    1|    1| function |
+    +-----+-----+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       0|     48|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        4|      -|     424|    564|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|      6|
+|Register         |        -|      -|     214|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        4|      0|     638|    618|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        1|      0|   ~0   |      1|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    +----------------------------+--------------------------+---------+-------+-----+-----+
+    |          Instance          |          Module          | BRAM_18K| DSP48E|  FF | LUT |
+    +----------------------------+--------------------------+---------+-------+-----+-----+
+    |ti_spi_if_AXILiteS_s_axi_U  |ti_spi_if_AXILiteS_s_axi  |        4|      0|  424|  564|
+    +----------------------------+--------------------------+---------+-------+-----+-----+
+    |Total                       |                          |        4|      0|  424|  564|
+    +----------------------------+--------------------------+---------+-------+-----+-----+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |           Variable Name          | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |tmp_4_fu_310_p2                   |     +    |      0|  0|  16|          16|           1|
+    |Update_Byte_Out_load_fu_245_p2    |    and   |      0|  0|   1|           1|           1|
+    |Update_String_Out_lo_fu_265_p2    |    and   |      0|  0|   1|           1|           1|
+    |ap_condition_338                  |    and   |      0|  0|   1|           1|           1|
+    |ap_condition_58                   |    and   |      0|  0|   1|           1|           1|
+    |tmp_s_fu_358_p2                   |   icmp   |      0|  0|  12|          32|           1|
+    |ap_block_pp0_stage0_01001         |    or    |      0|  0|   1|           1|           1|
+    |ap_block_state3_pp0_stage0_iter2  |    or    |      0|  0|   1|           1|           1|
+    |MISO_out                          |  select  |      0|  0|   8|           1|           2|
+    |ap_enable_pp0                     |    xor   |      0|  0|   2|           1|           2|
+    |tmp_3_fu_239_p2                   |    xor   |      0|  0|   2|           2|           1|
+    |tmp_5_fu_259_p2                   |    xor   |      0|  0|   2|           2|           1|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |Total                             |          |      0|  0|  48|          60|          14|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------------------+----+-----------+-----+-----------+
+    |          Name          | LUT| Input Size| Bits| Total Bits|
+    +------------------------+----+-----------+-----+-----------+
+    |ByteCnt                 |   3|          2|   16|         32|
+    |StringUpdate_1_data_in  |   3|          3|   32|         96|
+    +------------------------+----+-----------+-----+-----------+
+    |Total                   |   6|          5|   48|        128|
+    +------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +--------------------------------------------+----+----+-----+-----------+
+    |                    Name                    | FF | LUT| Bits| Const Bits|
+    +--------------------------------------------+----+----+-----+-----------+
+    |ByteCnt                                     |  16|   0|   16|          0|
+    |ByteCnt_load_reg_387                        |  16|   0|   16|          0|
+    |Ctrl_PS_0_data_reg                          |  32|   0|   32|          0|
+    |Ctrl_PS_0_vld_reg                           |   0|   0|    1|          1|
+    |MISO_Sel_0_data_reg                         |  32|   0|   32|          0|
+    |MISO_Sel_0_vld_reg                          |   0|   0|    1|          1|
+    |MISO_Sel_1_vld_reg                          |   1|   0|    1|          0|
+    |MISO_data_load_reg_402                      |   8|   0|    8|          0|
+    |MOSI_in_read_reg_372                        |   8|   0|    8|          0|
+    |MOSI_in_read_reg_372_pp0_iter1_reg          |   8|   0|    8|          0|
+    |StringLen_1_data_reg                        |  16|   0|   32|         16|
+    |StringLen_1_vld_reg                         |   1|   0|    1|          0|
+    |StringUpdate_1_data_reg                     |  32|   0|   32|          0|
+    |StringUpdate_1_vld_reg                      |   1|   0|    1|          0|
+    |Update_Byte_Delay_0                         |   1|   0|    1|          0|
+    |Update_Byte_Delay_1                         |   1|   0|    1|          0|
+    |Update_Byte_Out_load_reg_377                |   1|   0|    1|          0|
+    |Update_Byte_Out_load_reg_377_pp0_iter1_reg  |   1|   0|    1|          0|
+    |Update_String_Delay_1                       |   1|   0|    1|          0|
+    |Update_String_Delay_s                       |   1|   0|    1|          0|
+    |Update_String_Out_lo_reg_382                |   1|   0|    1|          0|
+    |Update_String_Out_lo_reg_382_pp0_iter1_reg  |   1|   0|    1|          0|
+    |ap_CS_fsm                                   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1                     |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter2                     |   1|   0|    1|          0|
+    |tmp_1_reg_392                               |  16|   0|   64|         48|
+    |tmp_1_reg_392_pp0_iter1_reg                 |  16|   0|   64|         48|
+    +--------------------------------------------+----+----+-----+-----------+
+    |Total                                       | 214|   0|  328|        114|
+    +--------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------------+-----+-----+------------+-------------------+--------------+
+|        RTL Ports       | Dir | Bits|  Protocol  |   Source Object   |    C Type    |
++------------------------+-----+-----+------------+-------------------+--------------+
+|s_axi_AXILiteS_AWVALID  |  in |    1|    s_axi   |      AXILiteS     |     array    |
+|s_axi_AXILiteS_AWREADY  | out |    1|    s_axi   |      AXILiteS     |     array    |
+|s_axi_AXILiteS_AWADDR   |  in |   14|    s_axi   |      AXILiteS     |     array    |
+|s_axi_AXILiteS_WVALID   |  in |    1|    s_axi   |      AXILiteS     |     array    |
+|s_axi_AXILiteS_WREADY   | out |    1|    s_axi   |      AXILiteS     |     array    |
+|s_axi_AXILiteS_WDATA    |  in |   32|    s_axi   |      AXILiteS     |     array    |
+|s_axi_AXILiteS_WSTRB    |  in |    4|    s_axi   |      AXILiteS     |     array    |
+|s_axi_AXILiteS_ARVALID  |  in |    1|    s_axi   |      AXILiteS     |     array    |
+|s_axi_AXILiteS_ARREADY  | out |    1|    s_axi   |      AXILiteS     |     array    |
+|s_axi_AXILiteS_ARADDR   |  in |   14|    s_axi   |      AXILiteS     |     array    |
+|s_axi_AXILiteS_RVALID   | out |    1|    s_axi   |      AXILiteS     |     array    |
+|s_axi_AXILiteS_RREADY   |  in |    1|    s_axi   |      AXILiteS     |     array    |
+|s_axi_AXILiteS_RDATA    | out |   32|    s_axi   |      AXILiteS     |     array    |
+|s_axi_AXILiteS_RRESP    | out |    2|    s_axi   |      AXILiteS     |     array    |
+|s_axi_AXILiteS_BVALID   | out |    1|    s_axi   |      AXILiteS     |     array    |
+|s_axi_AXILiteS_BREADY   |  in |    1|    s_axi   |      AXILiteS     |     array    |
+|s_axi_AXILiteS_BRESP    | out |    2|    s_axi   |      AXILiteS     |     array    |
+|ap_clk                  |  in |    1| ap_ctrl_hs |     ti_spi_if     | return value |
+|ap_rst_n                |  in |    1| ap_ctrl_hs |     ti_spi_if     | return value |
+|interrupt               | out |    1| ap_ctrl_hs |     ti_spi_if     | return value |
+|MOSI_in                 |  in |    8|   ap_none  |      MOSI_in      |    scalar    |
+|MISO_out                | out |    8|   ap_none  |      MISO_out     |    pointer   |
+|Update_Byte_In          |  in |    1|   ap_none  |   Update_Byte_In  |    scalar    |
+|Update_String_In        |  in |    1|   ap_none  |  Update_String_In |    scalar    |
+|Update_Byte_Out         | out |    1|   ap_none  |  Update_Byte_Out  |    pointer   |
+|Update_String_Out       | out |    1|   ap_none  | Update_String_Out |    pointer   |
+|RDY_SET                 | out |    1|   ap_none  |      RDY_SET      |    pointer   |
+|RDY_RESET               | out |    1|   ap_none  |     RDY_RESET     |    pointer   |
+|INH_SET                 | out |    1|   ap_none  |      INH_SET      |    pointer   |
+|INH_RESET               | out |    1|   ap_none  |     INH_RESET     |    pointer   |
++------------------------+-----+-----+------------+-------------------+--------------+
+
