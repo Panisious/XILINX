@@ -752,15 +752,9 @@ uint8 AfeSim_DeviceWakeUp(AfeSim_DeviceCommDirectionType commDir, AfeSim_DeviceP
 					AfeSim_OneDeviceWakeup(phyDevId);
 					printf("Device %d Wake\r\n", phyDevId);
 				}
-				/* 如果设备收到WakeTone但不处于Shutdown, 唤醒终止
-				 * 处于Shutdown, 允许唤醒 */
+				/* 处于Shutdown或Sleep, 允许唤醒 */
 				else if(wakeType == AFESIM_SHUTDOWN_TO_ACTIVE)
 				{
-					if(FALSE == AfeSim_AssertDeviceIsShutdown(phyDevId))
-					{
-						printf("Device %d is not Shutdown\r\n", phyDevId);
-						break;
-					}
 					wakeupNum++;
 					AfeSim_OneDeviceWakeup(phyDevId);
 					printf("Device %d Wake\r\n", phyDevId);
@@ -1262,6 +1256,7 @@ uint8 AfeSimX1_DeviceStackWrite(uint16 regAddrStart, uint8* data, uint8 len, Afe
 				retVal = TRUE;
 				break;
 			}
+			#if 0
 			/* 判断设备能否传输菊花链信号 */
 			if(FALSE == AfeSim_AssertDeviceCanSend(phyDevId, commDir))
 			{
@@ -1269,6 +1264,7 @@ uint8 AfeSimX1_DeviceStackWrite(uint16 regAddrStart, uint8* data, uint8 len, Afe
 				printf("Stack Write Fail, Path Device %d in Stack %d is Broken\r\n", phyDevId, commDir);
 				break;
 			}
+			#endif
 		}
 	}
 	return retVal;
@@ -1315,6 +1311,7 @@ uint8 AfeSimX1_DeviceSingleRead(uint8 stackDevId, uint16 regAddrStart, uint8* bu
 					&offset);
 			retVal = TRUE;
 			printf("Single Read BQ79600 %04X\r\n", regAddrStart);
+			return retVal;
 		}
 	}
 	else
