@@ -538,7 +538,7 @@ void AfeCalib_LatchCellVolt(void)
 	/*将当前电压存入标定数组*/
 	for(loop = 0; loop < BAT_MAX_NUM; loop++)
 	{
-		AfeCalib[AFECALIB_CELLVOLT_OFFSET + loop] = Bat[loop].volt_100uV;
+		AfeCalib[AFECALIB_CELLVOLT_OFFSET + loop] = Bat[loop].volt_100uV | AFECALIB_ENABLE_MASK;
 	}
 }
 

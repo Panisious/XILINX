@@ -196,12 +196,12 @@ void BatterySim_SocToVolt(BatteryType* bat, uint16 cellPos)
 	if(AfeCalib[AFECALIB_CELLVOLT_OFFSET + cellPos] & AFECALIB_ENABLE_MASK)
 	{
 		volt_100uV = AfeCalib[AFECALIB_CELLVOLT_OFFSET + cellPos] & AFECALIB_DATA_MASK;
-		if(volt_temp < 0)
+		if(volt_100uV< 0)
 			bat->volt_100uV = 0;
-		else if(volt_temp > 65535)
+		else if(volt_100uV > 65535)
 			bat->volt_100uV = 65535;
 		else
-			bat->volt_100uV = volt_temp;
+			bat->volt_100uV = volt_100uV;
 		return;
 	}
 	
